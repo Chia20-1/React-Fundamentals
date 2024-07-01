@@ -2,13 +2,17 @@ import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header";
 import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
+import { useState } from "react";
 
 // Let's do object destructuring
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
+
   const handleSelect = (selectedButton) => {
     // selected button => 'components','jsx','props','state'
     // Use if check to replace dynamic content
+    setSelectedTopic(selectedButton);
     console.log(selectedButton);
   };
 
@@ -57,6 +61,7 @@ function App() {
               State
             </TabButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>
