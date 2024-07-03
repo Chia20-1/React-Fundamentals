@@ -22,7 +22,6 @@ function App() {
   if (selectedTopic) {
     tabContent = (
       <div id="tab-content">
-        <p>Please select a topic</p>
         <h3>{EXAMPLES[selectedTopic].title}</h3>
         <p>{EXAMPLES[selectedTopic].description}</p>
         <pre>
@@ -49,6 +48,7 @@ function App() {
           <h2>Examples</h2>
           <menu>
             <TabButton
+              isSelected={selectedTopic === "components"}
               onSelect={() => {
                 handleSelect("components");
               }}
@@ -56,6 +56,7 @@ function App() {
               Components
             </TabButton>
             <TabButton
+              isSelected={selectedTopic === "jsx"}
               onSelect={() => {
                 handleSelect("jsx");
               }}
@@ -63,6 +64,7 @@ function App() {
               JSX
             </TabButton>
             <TabButton
+              isSelected={selectedTopic === "props"}
               onSelect={() => {
                 handleSelect("props");
               }}
@@ -70,6 +72,7 @@ function App() {
               Props
             </TabButton>
             <TabButton
+              isSelected={selectedTopic === "state"}
               onSelect={() => {
                 handleSelect("state");
               }}
